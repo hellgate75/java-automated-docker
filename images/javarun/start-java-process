@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "STARTING SERVICE WITH :"
+echo "JAR PATH: $JAR_PATH"
+echo "JAVA OPTIONS: $JAVA_OPTS"
+echo "JAVA ARGUMENTS: $APP_ARGS"
+echo "LOG FILE: $APP_LOGS"
+if [[ -e $JAR_PATH ]]; then
+    cd $APP_PATH
+    java $JAVA_OPTS -jar $JAR_PATH $APP_ARGS 2> $APP_LOGS
+    echo "JAVA APPLICATION COMPLETED!!"
+else
+    echo "JAVA EXECUTABLE JAR PATH NOT FOUND ...."
+fi
